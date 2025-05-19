@@ -1,0 +1,18 @@
+claud
+mernstack development
+live server
+
+Steps to open a html web in mobile to see how it opens
+1.In vs code download live server
+2.make index.html and add the html code in index.html
+3.now open command propt and type ipconfig
+4.now on vs code on right bottom go live and activate server 
+5.now on cmd notedown the ipv4 address on chrome and add the live servers :5500 or whatever on the link came on.
+6.Also off the firewall on laptop to run it on laptop
+
+Steps to see on laptop how will mobile page look
+1.Open vs code and open go live server
+2.now web will open and press ctrl+shift+i and then ctrl+shift+m
+
+
+Google and stackoverflow

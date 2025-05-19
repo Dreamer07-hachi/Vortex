@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICT College Clubs & Events</title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header><h1>PICT College Clubs & Events</h1></header>
+    <nav>
+        <ul>
+            <li><a href="#clubs">Clubs</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#" onclick="openCalendar()">Event Calendar</a></li>
+            <li><a href="#register">Register</a></li>  
+			<li><a href="#chat">Interaction Box</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+    <section id="clubs">
+        <h2>Clubs</h2>
+        <div class="clubs-grid">
+          <div class="club-card" onclick="openCsiCirclePage()">
+            <img src="csi1.png" alt="CSI" class="club-logo" />
+            <h3 class="club-name">PICT CSI CLUB</h3>
+          </div>
+          <div class="club-card" onclick="openPACPage()">
+            <img src="pac.png" alt="PAC" class="club-logo" />
+            <h3 class="club-name">PICT AUTOMOBILE CLUB</h3>
+          </div>
+          <div class="club-card" onclick="openArtCirclePage()">
+            <img src="ic.png" alt="Art Circle" class="club-logo" />
+            <h3 class="club-name">PICT ART CIRCLE CLUB</h3>
+		</div>
+
+          <div class="club-card">
+            <img src="edc.png" alt="EDC" class="club-logo" />
+            <h3 class="club-name">PICT EDC CLUB</h3>
+          </div>
+          <div class="club-card">
+            <img src="ieee.png" alt="IEEE" class="club-logo" />
+            <h3 class="club-name">PICT IEEE CLUB</h3>
+          </div>
+          <div class="club-card">
+            <img src="nak.png" alt="Nakshatra" class="club-logo" />
+            <h3 class="club-name">PICT NAKSHATRA CLUB</h3>
+          </div>
+          <div class="club-card">
+            <img src="pict.png" alt="Pictoreal" class="club-logo" />
+            <h3 class="club-name">PICT Pictoreal CLUB</h3>
+          </div>
+          <div class="club-card">
+            <img src="robotics.png" alt="Robotics" class="club-logo" />
+            <h3 class="club-name">PICT ROBOTICS CLUB</h3>
+          </div>
+        </div>
+    </section>
+    <section id="events">
+        <h2>Events</h2>
+        <div class="events-container">
+            <div class="event">
+                <img src="event1.jpg.jpeg" alt="ADDICTION Event">
+                <h3>ADDICTION</h3>
+            </div>
+            <div class="event">
+                <img src="event2.jpg.jpeg" alt="CSI Event">
+                <h3>XENIA</h3>
+            </div>
+            <div class="event">
+                <img src="Event3.jpg.png".jpg.png" alt="IEEE Event">
+                <h3>CREDENZ</h3>
+            </div>
+            <div class="theme-toggle" onclick="toggleTheme()">🌓</div>		
+        </div>
+		<section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="robotics.png" alt="Event Photo 1">
+            <img src="ieee.png" alt="Event Photo 2">
+            <img src="csi.jpeg" alt="Event Photo 3">
+            <img src="pict.png" alt="Event Photo 4">
+        </div>
+    </section>
+    </section>
+    <div id="calendarPopup" class="calendar-popup">
+        <h2>Event Calendar</h2>
+        <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=Asia/Kolkata" width="400" height="300" frameborder="0"></iframe>
+        <button onclick="closeCalendar()">Close</button>
+    </div>
+		</section>
+		 <section id="about-us" class="contact-form">
+        <div class="social-icons">
+           <h3>Feel free to contact us for any Query</h3>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button onclick="sendMessage()">Send Message</button>
+        </div>
+        <div class="about us">
+			<h2>About Us</h2>
+        <p>Welcome to the official website of PICT College Clubs & Events. We are dedicated to fostering a vibrant campus life through various clubs and events. Our mission is to provide students with opportunities to explore their interests, develop new skills, and build lasting connections.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        </div>
+		<div class="back-to-top" onclick="scrollToTop()">↑</div>
+    </section>
+   
+        
+
+       
+    
+     <script src="index.js"></script>
+</body>
+</html>

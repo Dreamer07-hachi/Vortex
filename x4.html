@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Clubs & Events Management Platform</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .event {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .add-event-form {
+      margin-top: 20px;
+    }
+    input {
+      margin: 5px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>College Clubs & Events Management Platform</h1>
+  <h2>Upcoming Events</h2>
+  <div id="events">
+    <!-- Events will be dynamically loaded here -->
+  </div>
+
+  <div class="add-event-form">
+    <h2>Add New Event</h2>
+    <input type="text" id="name" placeholder="Event Name">
+    <input type="text" id="date" placeholder="Date (YYYY-MM-DD)">
+    <input type="text" id="time" placeholder="Time (HH:MM)">
+    <input type="text" id="location" placeholder="Location">
+    <button onclick="addEvent()">Add Event</button>
+  </div>
+
+  <script>
+    // Fetch and display events
+    async function fetchEvents() {
+      const response = await fetch('http://127.0.0.1:5000/events');
+      const events = await response.json();
+      const eventsDiv = document.getElementById('events');
+      eventsDiv.innerHTML = events.map(event => `
+        <div class="event">
+          <p><strong>${event[0]}</strong></p>
+          <p>Date: ${event[1]} | Time: ${event[2]} | Location: ${event[3]}</p>
+        </div>
+      `).join('');
+    }
+
+    // Add a new event
+    async function addEvent() {
+      const name = document.getElementById('name').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const location = document.getElementById('location').value;
+
+      const response = await fetch('http://127.0.0.1:5000/events', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, date, time, location })
+      });
+
+      if (response.ok) {
+        alert('Event added successfully!');
+        fetchEvents(); // Refresh the event list
+      } else {
+        alert('Failed to add event.');
+      }
+    }
+
+    // Load events when the page loads
+    fetchEvents();
+  </script>
+</body>
+</html>

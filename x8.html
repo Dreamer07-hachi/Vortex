@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICT College Clubs & Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body { font-family: 'Arial', sans-serif; background-color: #0a0a0a; color: white; margin: 0; padding: 0; }
+        header { position: relative; text-align: center; color: white; height: 100vh; background: url('header1.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8); overflow: hidden; }
+        header h1 { background: rgba(0, 0, 0, 0.6); padding: 20px 50px; border-radius: 15px; font-size: 3rem; text-transform: uppercase; box-shadow: 0px 0px 20px rgba(196, 211, 211, 0.8); backdrop-filter: blur(5px); }
+        nav { background: linear-gradient(90deg, #1e1e1e, #333); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0px 4px 10px rgba(209, 220, 220, 0.5); }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { display: inline; margin: 0 20px; }
+        nav ul li a { color: white; text-decoration: none; font-size: 1.3rem; font-weight: bold; transition: 0.3s; }
+        nav ul li a:hover { color: rgb(134, 156, 156); text-shadow: 0px 0px 10px rgb(160, 178, 178); }
+        section { padding: 60px; text-align: center; }
+        .calendar-popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.9); padding: 20px; border-radius: 10px; box-shadow: 0 0 20px rgb(161, 169, 169); z-index: 1001; width: 40%; }
+        .calendar-popup iframe { width: 100%; height: 300px; }
+        .calendar-popup button { margin-top: 10px; padding: 10px 20px; background: rgb(121, 129, 129); color: black; border: none; border-radius: 5px; cursor: pointer; }
+        .club-logo { width: 150px; margin: 20px auto; }
+        .events-container { display: flex; justify-content: space-around; align-items: center; padding: 20px; flex-wrap: wrap; }
+        .event { text-align: center; margin: 20px; transition: transform 0.3s, box-shadow 0.3s; }
+        .event img { width: 200px; height: auto; border-radius: 10px; box-shadow: 0 0 15px cyan; transition: transform 0.3s; }
+        .event h3 { margin-top: 10px; }
+        .event:hover { transform: scale(1.1); }
+        .event:hover img { box-shadow: 0 0 25px cyan; }
+        .about-us { background: #1e1e1e; padding: 40px; text-align: center; color: white; }
+        .about-us h2 { margin-bottom: 10px; }
+        .social-icons { margin-top: 15px; }
+        .social-icons a { color: white; font-size: 24px; margin: 0 10px; text-decoration: none; transition: 0.3s; }
+        .social-icons a:hover { color: #E1306C; }
+        .contact-form { background: #222; padding: 30px; border-radius: 10px; margin-top: 30px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 5px; }
+        .contact-form button { background: cyan; color: black; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px; }
+        .gallery img { width: 300px; height: 200px; object-fit: cover; border-radius: 10px; transition: transform 0.3s; }
+        .gallery img:hover { transform: scale(1.05); }
+        footer { background: linear-gradient(90deg, #1e1e1e, #333); padding: 20px; text-align: center; margin-top: 40px; }
+        footer a { color: white; margin: 0 10px; font-size: 1.5rem; transition: color 0.3s; }
+        footer a:hover { color: cyan; }
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; background: rgba(0, 0, 0, 0.7); color: white; padding: 10px 15px; border-radius: 50%; cursor: pointer; display: none; transition: background 0.3s; }
+        .back-to-top:hover { background: rgba(0, 0, 0, 0.9); }
+        @media (max-width: 768px) {
+            nav ul li { display: block; margin: 10px 0; }
+            .events-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header><h1>PICT College Clubs & Events</h1></header>
+    <nav>
+        <ul>
+            <li><a href="#clubs">Clubs</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#" onclick="openCalendar()">Event Calendar</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#chat">Interaction Box</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+    <section id="clubs">
+        <h2>Clubs</h2>
+        <div>
+            <img src="club1.jpg" alt="CSI PICT Club Logo" class="club-logo">
+            <h3>CSI - PICT Student Branch</h3>
+            <p>Details about CSI club will go here.</p>
+        </div>
+    </section>
+    <section id="events">
+        <h2>Events</h2>
+        <div class="events-container">
+            <div class="event">
+                <img src="event1.jpg" alt="ADDICTION Event">
+                <h3>ADDICTION</h3>
+            </div>
+            <div class="event">
+                <img src="event2.jpg" alt="XENIA Event">
+                <h3>XENIA</h3>
+            </div>
+        </div>
+    </section>
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="gallery1.jpg" alt="Event Photo 1">
+            <img src="gallery2.jpg" alt="Event Photo 2">
+            <img src="gallery3.jpg" alt="Event Photo 3">
+            <img src="gallery4.jpg" alt="Event Photo 4">
+        </div>
+    </section>
+    <section id="about-us" class="about-us">
+        <h2>About Us</h2>
+        <p>Welcome to the official website of PICT College Clubs & Events. We are dedicated to fostering a vibrant campus life through various clubs and events. Our mission is to provide students with opportunities to explore their interests, develop new skills, and build lasting connections.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="contact-form">
+            <h3>Feel free to contact us for any Query</h3>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button onclick="sendMessage()">Send Message</button>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 PICT College Clubs & Events. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <div class="back-to-top" onclick="scrollToTop()">↑</div>
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to Top Button
+        window.onscroll = function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Calendar Popup
+        function openCalendar() {
+            document.getElementById('calendarPopup').style.display = 'block';
+        }
+        function closeCalendar() {
+            document.getElementById('calendarPopup').style.display = 'none';
+        }
+
+        // Contact Form Submission
+        function sendMessage() {
+            alert('Thank you for your message! We will get back to you soon.');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSI PICT - PCSB</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #0a0a0a; color: white; margin: 0; padding: 0; }
+        header { text-align: center; padding: 50px; background: linear-gradient(90deg, #1e1e1e, #333); box-shadow: 0px 4px 10px rgba(209, 220, 220, 0.5); position: relative; display: flex; justify-content: center; align-items: center; opacity: 0; animation: fadeIn 1.5s ease-in-out forwards; }
+        header h1 { font-size: 2.5rem; text-transform: uppercase; margin: 0 20px; }
+        .header-images { display: flex; align-items: center; }
+        .header-images img { width: 150px; height: auto; margin: 0 20px; opacity: 0; animation: fadeIn 1.5s ease-in-out forwards 0.5s; }
+        section { padding: 50px; text-align: center; }
+        .sig-list { display: flex; justify-content: center; flex-wrap: wrap; }
+        .sig { background: rgba(255, 255, 255, 0.1); margin: 10px; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px cyan; }
+        .gallery { display: flex; justify-content: center; flex-wrap: wrap; }
+        .gallery img { width: 200px; margin: 10px; border-radius: 10px; box-shadow: 0 0 10px cyan; }
+        .join-btn { background: cyan; color: black; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
+        .social-links a { margin: 10px; color: cyan; font-size: 1.5rem; text-decoration: none; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-images">
+            <img src="csip.jpeg" alt="CSI PICT Logo">
+        </div>
+        <h1>🚀 Greetings from PCSB! 💫</h1>
+        <div class="header-images">
+            <img src="csivp.jpeg" alt="CSI VP Logo">
+        </div>
+    </header>
+    <section>
+        <h2>🌟 Why Join PCSB?</h2>
+        <p>From coding circles and hackathons to exclusive mentorship programs and industry collaborations, we've got everything you need to grow!</p>
+    </section>
+    <section>
+        <h2>💡 Specialized Interest Groups (SIGs)</h2>
+        <div class="sig-list">
+            <div class="sig">✔ Web Development</div>
+            <div class="sig">✔ App Development</div>
+            <div class="sig">✔ Machine Learning</div>
+            <div class="sig">✔ Cybersecurity</div>
+            <div class="sig">✔ Competitive Programming</div>
+        </div>
+    </section>
+    <section>
+        <h2>💻 More than Just Tech!</h2>
+        <p>Career guidance, networking, hands-on projects, leadership opportunities, and more!</p>
+    </section>
+    <section>
+        <h2>📅 Upcoming & Past Events</h2>
+        <ul>
+            <li>🏆 Hackathons & Coding Challenges</li>
+            <li>🎤 Industry Speaker Sessions</li>
+            <li>💻 Technical Workshops & Bootcamps</li>
+            <li>🏅 Project Showcases & Competitions</li>
+        </ul>
+    </section>
+    <section>
+        <h2>💬 What Our Members Say</h2>
+        <p>"Being a part of PCSB helped me gain confidence in coding and networking with industry leaders!" - [Student Name]</p>
+    </section>
+    <section>
+        <h2>📸 Glimpses from Our Events</h2>
+        <div class="gallery">
+            <img src="event1.jpg" alt="Event Image">
+            <img src="event2.jpg" alt="Event Image">
+        </div>
+    </section>
+    <section>
+        <h2>🌍 Stay Connected</h2>
+        <div class="social-links">
+            <a href="[Instagram Link]">Instagram</a>
+            <a href="[LinkedIn Link]">LinkedIn</a>
+            <a href="[YouTube Link]">YouTube</a>
+        </div>
+    </section>
+    <section>
+        <a href="[Google Form Link]" class="join-btn">🚀 Join Us Now!</a>
+    </section>
+</body>
+</html>

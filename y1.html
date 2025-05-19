@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Custom Cursor Styles */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00ff88;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: 
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                width 0.3s ease,
+                height 0.3s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-inner {
+            width: 6px;
+            height: 6px;
+            background: #00ff88;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.15s ease;
+        }
+
+        /* Hover Effects */
+        .hover-effect {
+            transform: scale(2.5);
+            border-color: #ff0066;
+            background: rgba(255, 0, 102, 0.2);
+        }
+
+        .hover-inner {
+            transform: scale(0.5);
+            background: #ff0066;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="cursor-inner"></div>
+
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorInner = document.querySelector('.cursor-inner');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            cursorInner.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        // Hover Effects
+        document.querySelectorAll('a, button, .hover-target').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover-effect');
+                cursorInner.classList.add('hover-inner');
+            });
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover-effect');
+                cursorInner.classList.remove('hover-inner');
+            });
+        });
+    </script>
+</body>
+</html>
